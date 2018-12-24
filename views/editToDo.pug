@@ -1,0 +1,9 @@
+extends layout.pug
+
+block head
+    title EditToDo
+
+block content
+    form(action="/edit", method="POST")
+      input(type="text", required, name="task")#task
+      button(type="submit") Done

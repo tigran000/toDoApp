@@ -1,9 +1,17 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Document
-    body
-      h1 toDoList
+extends layout.pug
+
+block head
+  title Todos
+block styles
+  link(rel="stylesheet", href="/main.css")
+    
+    
+
+block content
+    form(action="/", method="POST")
+      input(type="text", required, name="task")#task
+      button(type="submit") Add To Do
+    each toDo in toDos
+      h1 #{toDo.task}
+      a(href=`/delete/${toDo.id}`) Delete
+      a(href=`/edit/${toDo.id}`) Edit
