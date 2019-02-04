@@ -1,4 +1,4 @@
-An express web application that has following features
+An express web application that has following features:
 
 Simple web app - todo app (CRUD)
 
